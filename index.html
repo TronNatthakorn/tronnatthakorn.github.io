@@ -1,4 +1,47 @@
+<!DOCTYPE html>
 <html>
-  <head></head>
-  <body>Hello World</body>
+
+<head>
+  <title>TronNatthakorn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,width=device-width">
+</head>
+
+<body>
+  <div id="root">
+    <h1>Test PWA Hello</h1>
+    <button id="btn-install-app" class="btn-install-app">Install</button>
+  </div>
+
+  <script type="text/javascript">
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      deferredPrompt = e;
+
+      e.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === 'accepted') {
+          deferredPrompt = null;
+        }
+
+      });
+    });
+
+    const installApp = document.getElementById('btn-install-app');
+
+    installApp.addEventListener('click', async () => {
+      if (deferredPrompt !== null) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          deferredPrompt = null;
+        }
+      } else {
+        alert('Already installed.')
+      }
+    });
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,34 @@
+{
+  "short_name": "TronNatthakorn",
+  "name": "TronNatthakorn",
+  "description": "Personal Web App",
+  "icons": [
+    {
+      "src": "img/logo-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo-196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "url_handlers": [
+    {
+      "origin": "https://tronnatthakorn.github.io"
+    }
+  ]
+}
