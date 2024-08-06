@@ -25,12 +25,12 @@
     window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt = e;
 
-      e.userChoice.then(function (choiceResult) {
-        if (choiceResult.outcome === 'accepted') {
-          deferredPrompt = null;
-        }
+      // e.userChoice.then(function (choiceResult) {
+      //   if (choiceResult.outcome === 'accepted') {
+      //     deferredPrompt = null;
+      //   }
 
-      });
+      // });
     });
 
     const installApp = document.getElementById('btn-install-app');
